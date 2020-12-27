@@ -1,0 +1,34 @@
+{
+"LambdaFunctionConfigurations": [
+    {
+      "Id": "png",
+      "LambdaFunctionArn": "arn:aws:lambda:eu-central-1:707714338119:function:triggerOnUpload",
+      "Events": [ "s3:ObjectCreated:Put","s3:ObjectCreated:Post","s3:ObjectCreated:CompleteMultipartUpload" ],
+      "Filter": {
+        "Key": {
+          "FilterRules": [
+            {
+              "Name": "suffix",
+              "Value": ".png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Id": "jpg",
+      "LambdaFunctionArn": "arn:aws:lambda:eu-central-1:707714338119:function:triggerOnUpload",
+      "Events": [ "s3:ObjectCreated:Put","s3:ObjectCreated:Post","s3:ObjectCreated:CompleteMultipartUpload" ],
+      "Filter": {
+        "Key": {
+          "FilterRules": [
+            {
+              "Name": "suffix",
+              "Value": ".jpg"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
